@@ -7,7 +7,7 @@ import logo from "../../assets/image.png";
 export default function Navbar() {
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
-
+  // console.log(user.email);
   const handleLogout = async () => {
     await signOut();
     localStorage.removeItem("token");
