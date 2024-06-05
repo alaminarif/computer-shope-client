@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-const SingleProductCardDashboard = ({ product, onDelete }) => {
+const SingleProductCardDashboard = ({ product, refetch }) => {
   const token = localStorage.getItem("token");
   const { _id, title, brand, price, description, image_url } = product;
   console.log(_id);
@@ -19,7 +19,7 @@ const SingleProductCardDashboard = ({ product, onDelete }) => {
       .then((res) => res.json())
       .then(() => {
         toast.success("Product Deleted");
-        onDelete(_id);
+        refetch();
       });
   };
 

@@ -5,14 +5,14 @@
 // import axios from "axios";
 // import { useParams } from "react-router-dom";
 
-// const ConfirmationModal = ({ deleteRecipe, setDeleteRecipe }) => {
-//   const { title, id } = deleteRecipe;
+// const ConfirmationModal = ({ deleteproduct, setDeleteproduct }) => {
+//   const { title, id } = deleteproduct;
 //   // const { id } = useParams();
 
 //   const handleDelete = async (id) => {
-//     const data = await axios.delete(`http://localhost:3000/recipes/${id}`);
+//     const data = await axios.delete(`http://localhost:3000/products/${id}`);
 
-//     setDeleteRecipe(null);
+//     setDeleteproduct(null);
 //   };
 
 //   return (

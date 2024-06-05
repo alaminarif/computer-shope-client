@@ -43,6 +43,10 @@ export default function Login() {
       }
     });
   };
+
+  const handleForgetPassword = () => {
+    console.log("reset pass");
+  };
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
@@ -74,7 +78,7 @@ export default function Login() {
                 </label>
                 <input type="password" placeholder="password" name="password" className="input input-bordered" required />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <a href="#" onClick={handleForgetPassword} className="label-text-alt link link-hover">
                     Forgot password?
                   </a>
                 </label>

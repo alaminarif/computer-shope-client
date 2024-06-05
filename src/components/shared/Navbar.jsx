@@ -3,11 +3,13 @@ import { auth } from "../../firebase/firebase.config";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/image.png";
+import ProfileLogin from "../../assets/profile-login.png";
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
+
   const [signOut] = useSignOut(auth);
-  // console.log(user.email);
+  console.log(user);
   const handleLogout = async () => {
     await signOut();
     localStorage.removeItem("token");
@@ -72,24 +74,36 @@ export default function Navbar() {
           </Link>
         </div>
       ) : (
-        <div className="navbar-end flex gap-4">
-          <div>
-            <button className="btn" onClick={handleLogout}>
-              Logout
-            </button>
-          </div>
-          <div>
-            <Link to={"/dashboard"} className="btn">
-              Dashboard
-            </Link>
-          </div>
+        <>
+          {/* <div className="dropdown">
+            <div tabIndex={0} className="text-black">
+              Click
+            </div> */}
 
-          <div className="avatar placeholder">
-            <div className="bg-neutral text-neutral-content rounded-full w-8">
-              <span>AS</span>
+          <div className="navbar-end flex gap-4">
+            <div className=" dropdown dropdown-end">
+              <div className="bg-neutral text-neutral-content rounded-full w-8" tabIndex={0}>
+                <img src={user.photoURL ? user.photoURL : ProfileLogin} className="w-12 rounded-full" alt="" />
+                {/* <span>{user?.displayName ? user.displayName.slice(0, 2) : "a"}</span> */}
+              </div>
+
+              <div tabIndex={0} className="dropdown-content z-[1] card card-compact w-64 p-2 shadow text-primary bg-slate-200">
+                <div className="card-body ">
+                  <div>
+                    <Link to={"/dashboard/home"} className="">
+                      Dashboard Home
+                    </Link>
+                  </div>
+                  <div>
+                    <button className="" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

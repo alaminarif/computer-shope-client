@@ -1,5 +1,3 @@
-// import Banner from "../components/home/Banner";
-
 import Banner from "../components/home/Banner";
 
 const Home = () => {
