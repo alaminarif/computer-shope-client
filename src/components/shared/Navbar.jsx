@@ -15,8 +15,8 @@ export default function Navbar() {
     localStorage.removeItem("token");
   };
   return (
-    <div className="navbar bg-base-100 sticky top-0 px-16 z-10">
-      <div className="navbar-start">
+    <div className="navbar bg-accent sticky top-0 px-16 z-10">
+      <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,21 +81,23 @@ export default function Navbar() {
             </div> */}
 
           <div className="navbar-end flex gap-4">
-            <div className=" dropdown dropdown-end">
-              <div className="bg-neutral text-neutral-content rounded-full w-8" tabIndex={0}>
+            <div className=" dropdown dropdown-end ">
+              <div className=" text-neutral-content rounded-full w-8" tabIndex={0}>
                 <img src={user.photoURL ? user.photoURL : ProfileLogin} className="w-12 rounded-full" alt="" />
                 {/* <span>{user?.displayName ? user.displayName.slice(0, 2) : "a"}</span> */}
               </div>
 
-              <div tabIndex={0} className="dropdown-content z-[1] card card-compact w-64 p-2 shadow text-primary bg-slate-200">
+              <div tabIndex={0} className="dropdown-content z-[1] card card-compact w-64 p-2 shadow text-primary bg-secondary">
                 <div className="card-body ">
+                  <span className="text-black mx-auto">accounts</span>
+                  <hr />
                   <div>
-                    <Link to={"/dashboard/home"} className="">
+                    <Link to={"/dashboard/home"} className=" text-black">
                       Dashboard Home
                     </Link>
                   </div>
                   <div>
-                    <button className="" onClick={handleLogout}>
+                    <button className="text-black " onClick={handleLogout}>
                       Logout
                     </button>
                   </div>

@@ -4,7 +4,7 @@
 
 ## [computer-shope-Sever-link](https://computer-shope-server.onrender.com/)
 
-## UserWebsite Descreption:
+## Website Descreption:
 
 comimg soon...
 
@@ -14,7 +14,7 @@ comimg soon...
 
 - React
 - React Router
-- Tailwind css
+- Tailwind CSS
 - deisy IU
 - Firebase Authenticetion
 - React Form Hooks

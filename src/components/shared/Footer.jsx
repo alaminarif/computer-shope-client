@@ -4,7 +4,7 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <div>
+    <div className="bg-accent">
       <div className=" p-20">
         <div className="flex justify-between">
           <div>

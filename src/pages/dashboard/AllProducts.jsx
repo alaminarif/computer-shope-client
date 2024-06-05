@@ -7,6 +7,8 @@ import { useDebounce } from "../../hooks/useDebounce";
 const AllProducts = () => {
   // const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+
+  //custom hooks for effitient search
   const debouncedSearch = useDebounce(search, 500);
 
   const url = `https://computer-shope-server.onrender.com/products?search=${search}`;
@@ -40,9 +42,14 @@ const AllProducts = () => {
   return (
     <div>
       <h1 className="text-5xl font-bold text-center">All Products</h1>
-      <form onSubmit={handleSearch}>
-        <input type="text" name="search" placeholder="Search by product title, name or price" className="input w-6/12" />
-        <input type="submit" value="Search" className="btn btn-primary" />
+      <form onSubmit={handleSearch} className="my-4 flex justify-center">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search by product title, name or price"
+          className="input w-6/12 border-slate-300 rounded-none "
+        />
+        <input type="submit" value="Search" className="btn btn-primary rounded-none w-[120px]" />
       </form>
       <div className="my-16 flex flex-wrap gap-4">
         {products?.map((product) => (
