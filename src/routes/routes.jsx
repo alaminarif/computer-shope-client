@@ -15,6 +15,8 @@ import ProductDetails from "../pages/dashboard/ProductDetails";
 import EditProducts from "../pages/dashboard/EditProducts";
 import EditProfile from "../pages/dashboard/EditProfile";
 import Dashboard from "../pages/dashboard/Dashboard";
+import AllUsers from "../pages/dashboard/AllUsers";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
@@ -87,7 +93,15 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "add-products",
+        path: "all-users",
+        element: (
+          <PrivateRoute>
+            <AllUsers />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "all-products/add-products",
         element: (
           <PrivateRoute>
             <AddProducts />

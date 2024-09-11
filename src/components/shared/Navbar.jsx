@@ -2,7 +2,7 @@ import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/image.png";
+import logo from "../../assets/computer.png";
 import ProfileLogin from "../../assets/profile-login.png";
 
 export default function Navbar() {
@@ -10,6 +10,7 @@ export default function Navbar() {
 
   const [signOut] = useSignOut(auth);
   console.log(user);
+
   const handleLogout = async () => {
     await signOut();
     localStorage.removeItem("token");
@@ -23,18 +24,21 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
+          <ul tabIndex={0} className="menu menu-sm  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 uppercase font-bold">
+            <li className=" hover:bg-primary hover:rounded-lg">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="hover:bg-primary hover:rounded-lg">
               <Link to="/products">Products</Link>
             </li>
-            <li>
+            <li className="hover:bg-primary hover:rounded-lg">
               <Link to="/blog">Blog</Link>
             </li>
-            <li>
+            <li className="hover:bg-primary hover:rounded-lg">
               <Link to="/about">About</Link>
+            </li>
+            <li className="hover:bg-primary hover:rounded-lg">
+              <Link to="/contact">About</Link>
             </li>
           </ul>
         </div>
@@ -42,34 +46,35 @@ export default function Navbar() {
           <img src={logo} alt="logo" className="w-12" />
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="flex items-center gap-6 px-1">
-          <li>
+      <div className="navbar-center hidden lg:flex ">
+        <ul className="flex items-center px-1 uppercase font-bold">
+          <li className="hover:bg-primary hover:rounded-lg px-2 py-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
+          <li className="hover:bg-primary hover:rounded-lg px-2 py-4">
             <Link to="/products">Products</Link>
           </li>
-          <li>
+          <li className="hover:bg-primary hover:rounded-lg px-2 py-4">
+            <Link to="/blog">Blog</Link>
+          </li>
+
+          <li className="hover:bg-primary hover:rounded-lg px-2 py-4">
             <Link to=""></Link>
           </li>
-          <li>
+          <li className="hover:bg-primary hover:rounded-lg px-2 py-4">
             <Link to={"/about"}>About Us</Link>
           </li>
-          <li>
-            <a>Contact Us</a>
+          <li className="hover:bg-primary hover:rounded-lg">
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </div>
       {!user?.email ? (
         <div className="navbar-end flex gap-4">
-          <Link to={"/login"} className="btn">
+          <Link to={"/login"} className="btn btn-primary">
             Login
           </Link>
-          <Link to={"/register"} className="btn">
+          <Link to={"/register"} className="btn btn-primary">
             Registration
           </Link>
         </div>

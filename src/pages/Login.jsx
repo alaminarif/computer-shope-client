@@ -3,15 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useAuthState, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import GoogleLogin from "../components/Auth/GoogleLogin";
-// import { auth } from "../firebase/firebase.config";
 import FacebookLogin from "../components/Auth/FacebookLogin";
 import { auth } from "../firebase/firebase.config";
+import loginImage from "../assets/login-bro.png";
 
 export default function Login() {
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
   const [user, loading] = useAuthState(auth);
-  // console.log(user);
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
 
@@ -21,7 +20,6 @@ export default function Login() {
     const email = form.email.value;
     const password = form.password.value;
 
-    // const data = { email, password };
     signInWithEmailAndPassword(email, password).then((data) => {
       console.log(data?.user?.email);
       if (data?.user?.email) {
@@ -53,15 +51,10 @@ export default function Login() {
     }
   }, [user, loading, navigate, from]);
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-secondary">
       <div className="hero-content grid lg:grid-cols-2">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-            id nisi.
-          </p>
-          <img src="" alt="" />
+          <img src={loginImage} alt="" className=" " />
         </div>
         <div className="flex justify-end">
           <div className="card shrink-0 w-full max-w-md shadow-2xl bg-base-100">

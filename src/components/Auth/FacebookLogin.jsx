@@ -30,7 +30,7 @@ const FacebookLogin = () => {
 
   return (
     <div>
-      <button onClick={handleFacebookLoging} className=" px-5 py-3 bg-yellow-500 text-white w-full rounded-lg">
+      <button onClick={handleFacebookLoging} className=" px-5 py-3 bg-primary w-full rounded-lg">
         Facebook Login
       </button>
     </div>

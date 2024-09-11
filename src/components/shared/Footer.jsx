@@ -1,4 +1,4 @@
-import logo from "../../assets/image.png";
+import logo from "../../assets/computer.png";
 
 const Footer = () => {
   const date = new Date();

@@ -1,40 +1,29 @@
-// import banner1 from "../../assets/image_01.jpeg";
-import { useEffect, useState } from "react";
-import banner2 from "../../assets/bg-computer.jpg";
+import banner from "../../assets/banner.png";
+// import bannerTree from "../../assets/banner-tree.png";
 
 export default function Banner() {
-  const [search, setSearch] = useState();
-
-  useEffect(() => {
-    fetch(`https://computer-shope-server.onrender.com/products?search=${search}`).then((res) => res.json().then((data) => console.log(data)));
-  }, [search]);
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    const searchText = e.target.search.value;
-    setSearch(searchText);
-    console.log(searchText);
-  };
   return (
     <div
-      className="hero min-h-screen bg-no-repeat bg-center bg-cover "
+      className="hero min-h-screen bg-no-repeat bg-center bg-cover"
       style={{
-        backgroundImage: `url(${banner2})`,
+        backgroundImage: `url(${banner})`,
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-start text-neutral-content">
         <div className="max-w-md text-center">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5 ">
+          <p>2024 COLLECTION</p>
+          <h1 className="mb-5 text-5xl font-bold">Discover top rated items</h1>
+          {/* <p className="mb-5 ">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
             id nisi.
-          </p>
-          <form onSubmit={handleSearch}>
+          </p> */}
+          {/* <button className="btn btn-primary"></button> */}
+          {/* <form onSubmit={handleSearch}>
             <input type="text" name="search" id="" className="input" />
             <input type="submit" value="Search" className="btn btn-primary" />
-          </form>
-          <button className="btn btn-primary">Get Started</button>
+          </form> */}
+          <button className="btn btn-primary uppercase">Discover now</button>
         </div>
       </div>
     </div>

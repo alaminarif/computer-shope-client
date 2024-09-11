@@ -2,6 +2,7 @@ import { useAuthState, useCreateUserWithEmailAndPassword } from "react-firebase-
 import { auth } from "../firebase/firebase.config";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../components/Auth/GoogleLogin";
+import signUpImage from "../assets/Signup.png";
 
 import { useEffect } from "react";
 import FacebookLogin from "../components/Auth/FacebookLogin";
@@ -47,14 +48,10 @@ export default function Register() {
     }
   }, [user, loading, navigate, from]);
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-secondary">
       <div className="hero-content grid grid-cols-2 w-full mx-auto">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Register now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-            id nisi.
-          </p>
+          <img src={signUpImage} alt="" className="" />
         </div>
         <div className=" card shadow-2xl bg-base-100 max-w-lg">
           <form onSubmit={handleSubmit} className="card-body  ">
@@ -86,7 +83,7 @@ export default function Register() {
               </p>
             </div>
           </form>
-          <div className="  w-full ">
+          <div className=" w-full ">
             <div className="flex flex-col gap-2 mx-7 mb-7">
               <GoogleLogin />
               <FacebookLogin />

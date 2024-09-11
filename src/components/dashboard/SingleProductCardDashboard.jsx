@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const SingleProductCardDashboard = ({ product, refetch }) => {
   const token = localStorage.getItem("token");
-  const { _id, title, brand, price, description, image_url } = product;
+  const { _id, title, brand, price, image_url } = product;
   console.log(_id);
 
   const handleDelete = async () => {
@@ -32,15 +32,15 @@ const SingleProductCardDashboard = ({ product, refetch }) => {
         <h2 className="card-title">{title}</h2>
         <h3 className="text-xl font-semibold">{brand}</h3>
         <h3 className="text-xl font-semibold">{price}</h3>
-        <p>{description}</p>
+        {/* <p>{description}</p> */}
         <div className="card-actions justify-end">
-          <button className="btn bg-indigo-500 text-white">
-            <Link to={`/products/${_id}`}>See details</Link>
-          </button>
-          <button className="btn bg-green-600 text-white">
+          <button className="btn bg-primary w-full">
             <Link to={`edit/${_id}`}>Edit</Link>
           </button>
-          <button onClick={handleDelete} className="btn bg-red-500 text-white">
+          <button className="btn bg-primary w-full">
+            <Link to={`/products/${_id}`}>See details</Link>
+          </button>
+          <button onClick={handleDelete} className="btn bg-red-300 w-full">
             Delete
           </button>
         </div>

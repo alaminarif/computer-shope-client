@@ -37,42 +37,42 @@ const AddProducts = () => {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center">Add a Product</h1>
+      <h1 className="text-5xl font-bold text-center">Add Product</h1>
 
-      <form onSubmit={handleSubmit} className="">
+      <form onSubmit={handleSubmit} className="mt-4">
         <div className="grid grid-cols-2 justify-items-center gap-6   text-black">
           <div className=" w-full my-4">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="title" placeholder="Title" />
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="title" placeholder="Title" />
+          </div>
+          <div className=" w-full my-4">
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="brand" placeholder="Brand" />
           </div>
           <div className=" w-full">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="brand" placeholder="Brand" />
-          </div>
-          <div className=" w-full">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="model" placeholder="model" />
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="model" placeholder="model" />
           </div>
           <div className="w-full">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="price" placeholder="Price" />
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="price" placeholder="Price" />
           </div>
           <div className="w-full">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-neutral p-4 w-full border border-primary rounded-lg"
               type="text"
               name="technicalInfo"
               placeholder="technical information"
             />
           </div>
           <div className="w-full">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="features" placeholder="Features" />
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="features" placeholder="Features" />
           </div>
           <div className="w-full">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="description" placeholder="Description" />
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="description" placeholder="Description" />
           </div>
           <div className="w-full">
-            <input className="bg-gray-100 p-4 w-full border border-black rounded-lg" type="text" name="image_url" placeholder="Image URL" />
+            <input className="bg-neutral p-4 w-full border border-primary rounded-lg" type="text" name="image_url" placeholder="Image URL" />
           </div>
         </div>
         <div className="  mt-6  w-6/12">
-          <input className="btn w-full bg-red-500 text-white p-4" type="submit" value="Add product" />
+          <input className="btn w-full bg-primary uppercase  p-4" type="submit" value="Add product" />
         </div>
       </form>
     </div>
